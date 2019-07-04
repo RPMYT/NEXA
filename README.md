@@ -1,7 +1,7 @@
 # NEXA
 
 NEXA Corporation OC programs repo,
-This place is where we keep all of our code.
+This place is where we keep our code.
 
 # Instructions for NEXA employees: uploading
 
