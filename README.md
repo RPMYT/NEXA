@@ -1,13 +1,10 @@
-# NEXA
+# OSU
 
-NEXA Corporation OC programs repo.
-This place is where we keep our code.
+NEXA Corporation OSU repo.
 
-# Instructions for NEXA employees: uploading
+OSU is a suite of tools designed to be used with OpenSecurity.
 
-Simply message The_Stargazer#3014 on Discord, and upload the file of the program you would like added to the NEXA repository.
-The program will be uploaded once the code has been reviewed to ensure it is safe for use on NEXA computers.
+# Step-by-step setup guide
 
-# Instructions for NEXA employees: downloading
-
-Message The_Stargazer on discord to receive a Pastebin link which can then be fed to `pastebin get <id> <filename>` to download the file.
+1) Run `wget https://raw.githubusercontent.com/nexa/osu/master/install.sh | sh`
+2) Wait for the script to finish downloading all of OSU's programs.
