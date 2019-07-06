@@ -1,3 +1,1 @@
-# OSU documentation
 
-WIP
