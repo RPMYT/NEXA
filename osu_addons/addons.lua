@@ -15,3 +15,4 @@ addons["NanoFog Support"] = "nanofog.lua"
 addons["Network Integration"] = "network.lua"
 addons["Redstone Integration"] = "redstone.lua"
 addons["Redstone Card Support"] = "rscard.lua"
+return addons
