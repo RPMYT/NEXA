@@ -39,45 +39,43 @@ if args[1] == "setup" then
   print("OSU Installer V1, by PrismaticYT")
   print("Downloading OSU core...")
   download(bse.."osu_core/osu.lua", bin.."osu.lua")
-  print("Fetching addons list...")
-  download(bse.."osu_addons/addons.lua", "/tmp/addons.lua")
-  addons = dofile("/tmp/addons.lua")
-  addonList = {}
-  addonLocations = {}
-  print("Available addons:")
-  for k,v in pairs(addons) do
-    table.insert(addonList, k)
-    table.sort(addonList)
+  print("Fetching modules list...")
+  download(bse.."osu_modules/modlist.lua", "/tmp/modlist.lua")
+  modules = dofile("/tmp/modlist.lua")
+  modlist = {}
+  modloc = {}
+  print("Available modules:")
+  for k,v in pairs(modules) do
+    table.insert(modlist, k)
+    table.sort(modlist)
   end
-  for k,v in pairs(addons) do
-    table.insert(addonLocations, v)
-    table.sort(addonLocations)
+  for k,v in pairs(modules) do
+    table.insert(modloc, v)
+    table.sort(modloc)
   end
   for k,v in pairs(addonList) do
     print(k..": "..v)
   end
   print("Type 'exit' to exit and finish OSU installation.")
-  function installAddons()
-    io.write("Enter addon number (1 - "..#addonList.."): ")
-    addonNum = io.read()
-    if addonNum == "exit" then
+  function installModules()
+    io.write("Enter module number (1 - "..#modlist.."): ")
+    modnum = io.read()
+    if modnum == "exit" then
       return
     end
-    ok, why = pcall(tonumber, addonNum)
+    ok, why = pcall(tonumber, modnum)
     if not ok then
-      installAddons()
+      installModules()
       return
     end
-    addonURL = addonLocations[addonNum]
-    download(addonURL, lib.."osu/"..addonURL:match "[^/]+$")
-    installAddons()
+    moduleURL = modloc[modnum]
+    download(moduleURL, lib.."osu/"..moduleURL:match "[^/]+$")
+    installModules()
     return
   end
-  installAddons()
+  installModules()
   print("Downloading config...")
   download(bse.."osu_core/osu_config.lua", etc.."osu_config.lua")
-  print("Installing osud...")
-  download(bse.."osu_core/osud.lua", "/etc/rc.d/osud.lua")
   print("OSU installed!")
   print("Exiting...")
   os.exit()
