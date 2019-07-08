@@ -15,4 +15,5 @@ addons["NanoFog Support"] = "https://raw.githubusercontent.com/nexacorp/osu/mast
 addons["Network Integration"] = "https://raw.githubusercontent.com/nexacorp/osu/master/osu_addons/network.lua"
 addons["Redstone Integration"] = "https://raw.githubusercontent.com/nexacorp/osu/master/osu_addons/redstone.lua"
 addons["Redstone Card Support"] = "https://raw.githubusercontent.com/nexacorp/osu/master/osu_addons/rscard.lua"
+addons["Motion Sensor Support"] = "https://raw.githubusercontent.com/nexacorp/osu/master/osu_addons/motion.lua"
 return addons
