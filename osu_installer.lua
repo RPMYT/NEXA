@@ -39,41 +39,6 @@ if args[1] == "setup" then
   print("OSU Installer V1, by PrismaticYT")
   print("Downloading OSU core...")
   download(bse.."osu_core/osu.lua", bin.."osu.lua")
-  print("Fetching modules list...")
-  download(bse.."osu_modules/modlist.lua", "/tmp/modlist.lua")
-  modules = dofile("/tmp/modlist.lua")
-  modlist = {}
-  modloc = {}
-  print("Available modules:")
-  for k,v in pairs(modules) do
-    table.insert(modlist, k)
-    table.sort(modlist)
-  end
-  for k,v in pairs(modules) do
-    table.insert(modloc, v)
-    table.sort(modloc)
-  end
-  for k,v in pairs(addonList) do
-    print(k..": "..v)
-  end
-  print("Type 'exit' to exit and finish OSU installation.")
-  function installModules()
-    io.write("Enter module number (1 - "..#modlist.."): ")
-    modnum = io.read()
-    if modnum == "exit" then
-      return
-    end
-    ok, why = pcall(tonumber, modnum)
-    if not ok then
-      installModules()
-      return
-    end
-    moduleURL = modloc[modnum]
-    download(moduleURL, lib.."osu/"..moduleURL:match "[^/]+$")
-    installModules()
-    return
-  end
-  installModules()
   print("Downloading config...")
   download(bse.."osu_core/osu_config.lua", etc.."osu_config.lua")
   print("OSU installed!")
